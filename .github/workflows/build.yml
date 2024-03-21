@@ -1,0 +1,13 @@
+name: Build lorsqu'on push
+on: push
+jobs:
+  build:
+    name: Build du projet exemple
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+      - name: Installer les dépendances
+        run: npm install
+      - name: Build du projet
+        run: npm run build
